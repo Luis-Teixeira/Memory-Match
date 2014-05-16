@@ -1,0 +1,2 @@
+//aux
+function loadGame(){startBtn.innerHTML="A carregar";lib.utils.getJSON({url:"https://services.sapo.pt/Codebits/listbadges",type:"jsonp"},function(e){builtGame(e)})}function builtGame(e){d=JSON.parse(e);startBtn.innerHTML="Load Finished";game.init(d,{debug:!1});restart.classList.remove("hide");startBtn.className=startBtn.className+" hide"}function novoJogo(){game.restart()}var d,startBtn=document.getElementById("start-btn"),clock=document.getElementById("timer"),restart=document.getElementById("restart"),game=new Game;

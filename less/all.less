@@ -1,0 +1,129 @@
+@import "lesshat.less";
+
+//CORE
+html{
+	
+	padding:0;
+	margin:0;
+}
+body,a{
+	padding:0;
+	margin:0;
+	font-family: 'Open Sans', sans-serif;
+}
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Ubuntu', sans-serif;
+}
+a{
+	text-decoration: none;
+	color:inherit;
+	&:hover{
+		text-decoration:underline;
+	}	
+}
+.container{
+	width:800px;
+	margin:0 auto;
+	position:relative;
+}
+.btn{
+	padding:0 20px;
+	background-color:#ccc;
+	display:inline-block;
+	line-height:200%;
+	.border-radius(4px);
+	&:hover{
+		text-decoration:none;
+	}
+}
+
+.pagination-center{
+	text-align:center;
+}
+.clear{
+	clear:both;
+}
+.hide{
+	display:none;
+}
+.debug{
+	border: 1px solid #F00;
+}
+//GAME CSS
+#main-content{
+	height:450px;
+	margin:10px auto;
+}
+.clock{
+	float:left;
+	margin-left:2px;
+	font-size:20px;
+	color:green;
+	background-color:#000;
+}
+
+.start-btn{
+	text-transform:uppercase;
+	font-size:20px;
+	top:45%;
+	position:relative;
+}
+.restart{
+	float:left;
+	margin:3px;
+}
+.game{
+	margin:0 auto;
+	.perspective(1000px);
+	position: relative;
+}
+
+.card{
+	float:left;
+	background-color:#1b1b1b;
+	width:127px;
+	height:127px;
+	margin:3px;
+	.background-clip(padding-box);
+	.transform-style(preserve-3d); 
+	.transition(~"transform 250ms");
+	.border-radius(5px);
+	cursor:pointer;
+	figure{
+		margin:0;
+		padding:0;
+		width: 100%;
+		height: 100%;
+		.backface-visibility(hidden);
+	}
+	.front{
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		//background: black url('https://i2.wp.com/codebits.eu/logos/defaultavatar.jpg') no-repeat center center;
+	}
+	.back{
+		background:grey;
+		.transform(~"rotateY( 180deg )");
+	}
+	
+	&.flipped,&.matched{
+		.transform(~"rotateY( 180deg )");
+	}
+	//position: absolute
+}
+
+.share{
+	position:absolute;
+	text-align:center;
+	height:400px;
+	top:40px;
+	.border-radius(5px);
+	background-color:rgba(0,0,0,.75);
+	color: #fff;
+	h2{
+		margin-top:170px;
+		text-align:center;
+	}
+}
